@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <style>
+        body {
+            background-color: khaki;
+            color: black;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Example of Array...</h1>
+    <script>
+        // array using literal way
+        var array = [10, 20, 30, 40, 50]
+        for (i = 0; i < array.length; i++) {
+            document.write(array[i], "<br/>");
+        }
+        document.write("<br>");
+        //creating instance of array directly (using new keyword)  
+        var arr = new Array();
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+        arr[3] = 40;
+        for (i = 0; i < arr.length; i++) {
+            document.write(arr[i], "<br/>");
+        }
+        document.write("<br>");
+        // array constructor(using new keyword)
+        var arr = new Array(10, 20, 30);
+        for (i = 0; i < arr.length; i++) {
+            document.write(arr[i], "<br/>");
+        }
+        document.write("<br>");
+        // array methods
+        // length (to find length of the array)
+        var arr = [10, 20];
+        document.write(arr.length);
+        document.write("<br>");
+        document.write("<br>");
+        // concat (to merge one or more arrays)
+        var arr1 = [10, 20, 30, 40];
+        var arr2 = [50, 60];
+        var arr3 = [10, 20, 30];
+        document.write(arr1.concat(arr2), "<br/>");
+        document.write(arr2.concat(arr1, arr3));
+        document.write("<br>");
+        document.write("<br>");
+        // entries (to see index number and its values)
+        var arr1 = new Array(10, 20, 30, 40);
+        var arr2 = arr1.entries();
+        for (var i of arr2) {                  //for loop using var
+            document.write(i, "<br>");
+        }
+        document.write("<br>");
+        // flat (to create sub array)
+        var arr1 = [10, 20, [30, 40], 50, 60, [70, 80, [90, 100]]];
+        var arr2 = arr1.flat();
+        document.write(arr2, "<br>");
+        // flat 2
+        var array = [10, 20, [50, 51], 50, [60, [50, 70], 54]];
+        var array2 = array.flat();
+        document.write(array2, "<br>");
+        document.write("<br>");
+        // fill (to fill elements into an array with static values)
+        arr1 = [10, 20, 30, 40, 50];
+        arr2 = [10, 20, 30];
+        arr3 = [50, 30];
+        document.write(arr1.fill(30), "<br>");
+        document.write(arr2.fill("Hello", 2,), "<br>");
+        document.write(arr3.fill("20", "<br>"));
+        document.write("<br>");
+        document.write("<br>");
+        // includes (it will check values in array that is it true value or not)
+        var arr = new Array(10, 'Hello', 52, 40);
+        // return true if value is in array otherwise return false
+        document.write(arr.includes(10), "<br>");
+        document.write(arr.includes('hello',), '<br>');
+        document.write(arr.includes(10, 1));
+        document.write('<br>');
+        document.write('<br>');
+        // Index of (to check the index number of the value) 
+        var arr = [10, 20, 30, 40];
+        document.write(arr.indexOf(20), '<br/>');
+        document.write(arr.indexOf(10));
+        document.write('<br>');
+        document.write('<br>');
+        // Isarray (check-is values stored in array or not,if yes then true if no then false)
+        var arr = new Array(10, 25, 15, 54);
+        document.write(Array.isArray(arr), "<br>");
+        document.write('<br>');
+        // Join (to add specical character in between the values stored in array/to seperate values)
+        var arr = [25, 54, 54, 87];
+        document.write(arr.join('|'));
+        document.write('<br>');
+        document.write('<br>');
+        // last index of (to see the last index number)
+        var arr = [20, 50, 40, 60, 20];
+        document.write(arr.lastIndexOf(20));
+        document.write('<br>');
+        document.write('<br>');
+        // map (to see the value in round figure,returns the new array)
+        var arr = new Array(1.5, 2.2, 6.5, 8.9, 6.7);
+        document.write(arr.map(Math.round));
+        document.write('<br>');
+        document.write('<br>');
+        // pop (removes and returns last element of an array)
+        var arr = new Array(10, 20, 30);
+        document.write(arr, '<br>');
+        document.write("array is ", arr.pop(), '<br>');
+        document.write(arr);
+        document.write('<br>');
+        // push (to add one or more values to the end of an array)
+        var arr = new Array(10, 20, 30, 40, 50, 60, 70);
+        arr.push(80);
+        document.write(arr,"<br>");
+        arr.push(90, 100, 'Bye');
+        document.write(arr, '<br>');
+        document.write('<br>');
+        // reverse (it reverse the values of an array)
+        arr = [10, 20, 30, 40];
+        document.write(arr.reverse(), '<br>');
+        document.write('<br>');
+        // shift (to removes and returns the first element of an array)
+        arr = new Array();
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[3] = 30;
+        document.write(arr.shift());
+        document.write('<br>');
+        // slice (returns a new array containing the copy of the part of the given array)
+        arr = new Array(25, 54, 65, 45);
+        document.write(arr.slice(0, 2));
+        document.write('<br>');
+        // sort (returns array in a sorted order)
+        arr = new Array(54, 51, 23, 32, 65, 98, 87);
+        document.write(arr.sort(), '<br>');//ascending order
+        document.write(arr.sort().reverse());//descending order
+        document.write('<br>');
+        document.write('<br>');
+        // unshift (to add elements in the beginning of the array)
+        arr = new Array('css', 'c');
+        arr1 = arr.unshift('HTML');
+        arr2 = arr.unshift('python', 'ruby');
+        document.write(arr);
+        document.write('<br>');
+        document.write('<br>');
+        // values (to see the values of the array)
+        arr = new Array(10, 20, 30);
+        arr1 = arr.values();
+        for (var key of arr1) {
+            document.write(key, '<br>');
+        }
+    </script>
+</body>
+
+</html>
